@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Geral
@@ -62,6 +64,11 @@ public class exemplo4 extends javax.swing.JFrame {
         });
 
         jButton2.setText("marcar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("desmarcar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -113,16 +120,32 @@ public class exemplo4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jCkbInglesActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+      jCkbInformatica.setSelected (false);
+      jCkbIngles.setSelected (false);
+            // TODO add your handling code here:// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+String selecao = "selecionados:" ;  
+if (jCkbIngles.isSelected()){
+    selecao+= "\n"+jCkbIngles.getText();
+}
+if (jCkbInformatica.isSelected()){
+    selecao+= "\n"+jCkbInformatica.getText();
+}
+if(!jCkbIngles.isSelected() && !jCkbInformatica.isSelected()){
+    JOptionPane.showMessageDialog(null, "Abublé");
+} else {
+    JOptionPane.showMessageDialog(null, selecao);
     }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+jCkbInformatica.setSelected (true);   
+jCkbIngles.setSelected (true) ;// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
